@@ -19,7 +19,7 @@
       --text: #1a1a2e;
       --muted: #6b7280;
       --white: #ffffff;
-      --font-display<: 'Cormorant Garamond', serif;
+      --font-display: 'Cormorant Garamond', serif;
       --font-body: 'Inter', sans-serif;
     }
 
@@ -792,14 +792,14 @@
           <div class="contact-icon">📍</div>
           <div>
             <h4>Адрес</h4>
-            <p>ул. Ленина 45, каток "Алтын"</p>
+            <p>ЛДС Акжолтай, ул. Бухар жырау 53а</p>
           </div>
         </div>
         <div class="contact-item">
           <div class="contact-icon">📞</div>
           <div>
             <h4>Телефон</h4>
-            <p>+7 (700) 123-45-67</p>
+            <p>+7 701 236 32 73</p>
           </div>
         </div>
         <div class="contact-item">
