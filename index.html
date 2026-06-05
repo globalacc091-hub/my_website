@@ -81,18 +81,12 @@
     }
 
      .nav-logo {
-      font-family: var(--font-display);
-      font-size: 1.35rem;
-      font-weight: 600;
-      color: var(--deep);
-      text-decoration: none;
-      display: inline-flex;
-      flex-direction: column;
-      align-items: center;
-      line-height: 1.1;
-      gap: 0.1rem;
-      letter-spacing: 0.02em;
-    }
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
 
     .nav-links {
       display: flex;
@@ -774,6 +768,40 @@
       background: var(--soft);
     }
 
+    @media (max-width: 768px) {
+  .schedule-table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .schedule-table thead {
+    display: none;
+  }
+
+  .schedule-table tr {
+    display: block;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    padding: 1rem;
+  }
+
+  .schedule-table td {
+    display: block;
+    padding: 0.3rem 0;
+    border: none;
+    font-size: 0.85rem;
+  }
+
+  .schedule-table td:first-child {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+  }
+}
+
+
     .badge {
       display: inline-block;
       padding: 0.25rem 0.8rem;
@@ -1220,7 +1248,7 @@
   <section class="hero">
     <canvas id="heroParticles"></canvas>
     <div class="hero-skater">
-      <img src="skateline.jpg" alt="Фигуристка" />
+      <img src="images/skatelinejpg" alt="Фигуристка" />
     </div>  
     <div class="hero-content">
       <span class="hero-tag">Школа фигурного катания</span>
@@ -1336,7 +1364,7 @@
       <p class="section-sub" style="color: rgba(255,255,255,0.5);">Профессионалы с опытом выступлений и тренерской практикой</p>
       <div class="coach-profile fade-up">
   <div class="coach-photo">
-    <img src="coach.jpg" alt="Юлия Самущенко">
+    <img src="images/coach.jpg" alt="Юлия Самущенко">
   </div>
   <div class="coach-info">
     <h3>Юлия Самущенко</h3>
@@ -1454,19 +1482,19 @@
     <h2 class="section-title">Наши моменты</h2>
     <div class="gallery-grid">
   <div class="gallery-item gallery-wide fade-up">
-    <img src="p1.jpg" alt="Фото с соревнований" />
+    <img src="images/p1.jpg" alt="Фото с соревнований" />
   </div>
   <div class="gallery-item fade-up">
-    <img src="p2.jpg" alt="Фото с тренировки" />
+    <img src="images/p2.jpg" alt="Фото с тренировки" />
   </div>
   <div class="gallery-item fade-up">
-    <img src="p3.jpg" alt="Фото с тренировки" />
+    <img src="images/p3.jpg" alt="Фото с тренировки" />
   </div>
   <div class="gallery-item fade-up">
-    <img src="p4.jpg" alt="Фото с соревнований" />
+    <img src="images/p4.jpg" alt="Фото с соревнований" />
   </div>
   <div class="gallery-item fade-up">
-    <img src="p5.jpg" alt="Фото с выступления" />
+    <img src="images/p5.jpg" alt="Фото с выступления" />
   </div>
 </div>
   </div>
@@ -1528,7 +1556,7 @@
   <!-- ФУТЕР -->
   <footer>
     <p>© 2026 Школа фигурного катания. Все права защищены.</p>
-    <p style="margin-top: 5px; font-size: 0.9em; opacity: 0.8;">Разработано командой  Претомог-Пдиль </p>
+    <p style="margin-top: 5px; font-size: 0.9em; opacity: 0.8;">Разработано командой artemog & adil  </p>
   </footer>
 
   <!-- СКРИПТ для бургер-меню -->
