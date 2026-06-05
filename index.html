@@ -534,7 +534,76 @@
       font-size: 0.9rem;
       color: var(--text);
     }
+/* ============================
+   ТАЙМЛАЙН
+   ============================ */
+.timeline {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  margin-top: 2.5rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+}
 
+.tl-item {
+  flex: 1;
+  min-width: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.tl-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 36px;
+  left: 50%;
+  width: 100%;
+  height: 2px;
+  background: var(--accent);
+  opacity: 0.3;
+}
+
+.tl-year {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+
+.tl-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 3px solid var(--white);
+  box-shadow: 0 0 0 2px var(--accent);
+  margin-bottom: 0.75rem;
+  position: relative;
+  z-index: 1;
+}
+
+.tl-text {
+  font-size: 0.85rem;
+  color: var(--muted);
+  padding: 0 0.5rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .timeline {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .tl-item:not(:last-child)::after {
+    display: none;
+  }
+}
     /* ============================
        ФУТЕР
        ============================ */
@@ -662,7 +731,46 @@
       </div>
     </div>
   </section>
+<!-- ИСТОРИЯ -->
+<section id="history">
+  <div class="container">
+    <div class="section-tag">Наш путь</div>
+    <h2 class="section-title">Как мы росли</h2>
+    <div class="timeline">
 
+      <div class="tl-item">
+        <div class="tl-year">2018</div>
+        <div class="tl-dot"></div>
+        <div class="tl-text">Основали группу любителей и арендовали половину льда</div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-year">2019</div>
+        <div class="tl-dot"></div>
+        <div class="tl-text">Выросли до аренды целого льда два раза в неделю</div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-year">2020</div>
+        <div class="tl-dot"></div>
+        <div class="tl-text">Первые соревнования, увеличили тренировки до 4–5 льдов в неделю</div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-year">2021</div>
+        <div class="tl-dot"></div>
+        <div class="tl-text">Стали первой любительской школой Караганды, разделили на группы</div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-year">Сейчас</div>
+        <div class="tl-dot"></div>
+        <div class="tl-text">Призовые места в Москве, Питере и по всему Казахстану</div>
+      </div>
+
+    </div>
+  </div>
+</section>
   <!-- ДЛЯ КОГО -->
   <section id="audience">
     <div class="container">
