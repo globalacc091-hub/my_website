@@ -956,6 +956,16 @@
     display: none;
   }
 }
+    .fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
     /* ============================
        ФУТЕР
        ============================ */
@@ -1089,19 +1099,19 @@
         Наши ученики выступают на соревнованиях в Казахстане, Москве и Санкт-Петербурге.
       </p>
       <div class="stats-grid">
-        <div class="stat-card">
+        <div class="stat-card fade-up">
   <div class="stat-num">7+</div>
   <div class="stat-label">лет работы школы</div>
 </div>
-<div class="stat-card">
+<div class="stat-card fade-up">
   <div class="stat-num">12</div>
   <div class="stat-label">лет тренер в спорте</div>
 </div>
-<div class="stat-card">
+<div class="stat-card fade-up">
   <div class="stat-num">МС РК</div>
   <div class="stat-label">Мастер спорта РК</div>
 </div>
-<div class="stat-card"> 
+<div class="stat-card fade-up"> 
              <div class="stat-num">#1</div>
           <div class="stat-label">любительская школа Караганды</div>
         </div>
@@ -1115,31 +1125,31 @@
     <h2 class="section-title">Как мы росли</h2>
     <div class="timeline">
 
-      <div class="tl-item">
+      <div class="tl-item fade-up">
         <div class="tl-year">2018</div>
         <div class="tl-dot"></div>
         <div class="tl-text">Основали группу любителей и арендовали половину льда</div>
       </div>
 
-      <div class="tl-item">
+      <div class="tl-item fade-up">
         <div class="tl-year">2019</div>
         <div class="tl-dot"></div>
         <div class="tl-text">Выросли до аренды целого льда два раза в неделю</div>
       </div>
 
-      <div class="tl-item">
+      <div class="tl-item fade-up">
         <div class="tl-year">2020</div>
         <div class="tl-dot"></div>
         <div class="tl-text">Первые соревнования, увеличили тренировки до 4–5 льдов в неделю</div>
       </div>
 
-      <div class="tl-item">
+      <div class="tl-item fade-up">
         <div class="tl-year">2021</div>
         <div class="tl-dot"></div>
         <div class="tl-text">Стали первой любительской школой Караганды, разделили на группы</div>
       </div>
 
-      <div class="tl-item">
+      <div class="tl-item fade-up">
         <div class="tl-year">Сейчас</div>
         <div class="tl-dot"></div>
         <div class="tl-text">Призовые места в Москве, Санкт-Петербурге и по всему Казахстану</div>
@@ -1154,17 +1164,17 @@
       <div class="section-tag">Направления</div>
       <h2 class="section-title">Для кого мы работаем</h2>
       <div class="audience-grid">
-        <div class="audience-card">
+        <div class="audience-card fade-up">
           <div class="audience-icon">🧒</div>
           <h3>Дети</h3>
           <p>Группы с 4 лет. Развиваем координацию, уверенность и любовь к спорту в игровой форме.</p>
         </div>
-        <div class="audience-card">
+        <div class="audience-card fade-up">
           <div class="audience-icon">🧑</div>
           <h3>Взрослые</h3>
           <p>Никогда не поздно начать. Индивидуальный подход и комфортный темп обучения.</p>
         </div>
-        <div class="audience-card">
+        <div class="audience-card fade-up">
           <div class="audience-icon">🏅</div>
           <h3>Спортсмены</h3>
           <p>Для тех кто хочет выступать на соревнованиях. Программа подготовки и работа на результат.</p>
@@ -1179,7 +1189,7 @@
       <div class="section-tag" style="color: rgba(91,155,213,0.8);">Команда</div>
       <h2 class="section-title">Наш тренер</h2>
       <p class="section-sub" style="color: rgba(255,255,255,0.5);">Профессионалы с опытом выступлений и тренерской практикой</p>
-      <div class="coach-profile">
+      <div class="coach-profile fade-up">
   <div class="coach-photo">
     <img src="coach.jpg" alt="Юлия Самущенко">
   </div>
@@ -1268,7 +1278,7 @@
       <div class="section-tag">Стоимость</div>
       <h2 class="section-title">Прозрачные цены</h2>
       <div class="pricing-grid">
-        <div class="price-card">
+        <div class="price-card fade-up">
    <div class="price-name">2 льда в неделю</div>
   <div class="price-val">32 000<span style="font-size:1.2rem">₸</span></div>
   <div class="price-per">в месяц</div>
@@ -1278,7 +1288,7 @@
   <div class="price-val">37 000<span style="font-size:1.2rem">₸</span></div>
   <div class="price-per">в месяц</div>
 </div>
-<div class="price-card">
+<div class="price-card fade-up">
   <div class="price-name">1 лёд в неделю</div>
   <div class="price-val">от 25 000<span style="font-size:1.2rem">₸</span></div>
   <div class="price-per">зависит от кол-ва занятий</div>
@@ -1297,21 +1307,21 @@
       <div class="section-tag">Контакты</div>
       <h2 class="section-title">Приходите к нам</h2>
       <div class="contacts-grid">
-        <div class="contact-item">
+        <div class="contact-item fade-up">
           <div class="contact-icon">📍</div>
           <div>
             <h4>Адрес</h4>
             <p>ЛДС Акжолтай Бухар Жырау 53а</p>
           </div>
         </div>
-        <div class="contact-item">
+        <div class="contact-item fade-up">
           <div class="contact-icon">📞</div>
           <div>
             <h4>Телефон</h4>
             <p>+7 701 236 32 73</p>
           </div>
         </div>
-        <div class="contact-item">
+        <div class="contact-item fade-up">
           <div class="contact-icon">📸</div>
           <div>
             <h4>Instagram</h4>
@@ -1321,7 +1331,7 @@
               </a>
             </p>
           </div>
-          <div class="contact-item">
+          <div class="contact-item fade-up">
   <div class="contact-icon">📍</div>
   <div>
     <h4>2GIS</h4>
@@ -1333,7 +1343,7 @@
   </div>
 </div>
         </div>
-        <div class="contact-item">
+        <div class="contact-item fade-up">
           <div class="contact-icon">🕐</div>
           <div>
             <h4>Часы работы</h4>
@@ -1444,5 +1454,21 @@
     <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.855L.057 23.428a.75.75 0 0 0 .922.899l5.688-1.49A11.943 11.943 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.725 9.725 0 0 1-4.989-1.375l-.356-.214-3.699.968.993-3.608-.233-.372A9.718 9.718 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/>
   </svg>
 </a>
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, i * 100);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.fade-up').forEach(el => {
+    observer.observe(el);
+  });
+</script>
 </body>
 </html>
