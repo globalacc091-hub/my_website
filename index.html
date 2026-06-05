@@ -73,7 +73,7 @@
       background: rgba(255,255,255,0.98);
     }
 
-    .nav-logo {
+     {
       font-family: var(--font-display);
       font-size: 1.35rem;
       font-weight: 600;
@@ -133,13 +133,44 @@
       padding: 4px;
     }
 
-    .burger span {
-      width: 24px;
-      height: 2px;
-      background: var(--deep);
-      border-radius: 2px;
-      transition: all 0.3s;
-    }
+    .nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.logo-icon {
+  width: 36px;
+  height: 36px;
+  background: #0d1b2a;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.logo-main {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0d1b2a;
+  letter-spacing: 0.02em;
+}
+
+.logo-sub {
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #4578a8;
+}
 
     /* ============================
        HERO — первый экран
@@ -1077,7 +1108,13 @@
 
   <!-- НАВИГАЦИЯ -->
   <nav>
-    <a class="nav-logo" href="#">❄ Silver<br>Skates<br>krg</a>
+    <a class="nav-logo" href="#">
+      <div class="logo-icon">⛸</div>
+      <div class="logo-text">
+         <span class="logo-main">Silver Skates</span>
+        <span class="logo-sub">Караганда</span>
+     </div>
+    </a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#about">О школе</a></li>
       <li><a href="#coaches">Тренеры</a></li>
