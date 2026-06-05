@@ -360,6 +360,81 @@
   max-width: 400px;
   margin: 0 auto;
 }
+.coach-profile {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+  margin-top: 2rem;
+}
+
+.coach-photo img {
+  width: 280px;
+  height: 340px;
+  object-fit: cover;
+  border-radius: 20px;
+  border: 2px solid rgba(91,155,213,0.3);
+}
+
+.coach-info h3 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+
+.coach-title {
+  color: var(--accent);
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.coach-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.coach-badge {
+  background: rgba(91,155,213,0.15);
+  border: 1px solid rgba(91,155,213,0.3);
+  color: var(--accent);
+  padding: 0.3rem 0.8rem;
+  border-radius: 50px;
+  font-size: 0.8rem;
+}
+
+.coach-facts {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.coach-facts li {
+  color: rgba(255,255,255,0.7);
+  font-size: 0.95rem;
+}
+
+.coach-quote {
+  border-left: 2px solid var(--accent);
+  padding-left: 1rem;
+  color: rgba(255,255,255,0.5);
+  font-style: italic;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .coach-profile {
+    flex-direction: column;
+  }
+  .coach-photo img {
+    width: 100%;
+    height: 300px;
+  }
+}
 
 .coach-card h3 {
   font-family: var(--font-display);
@@ -810,15 +885,30 @@
   <section class="coaches" id="coaches">
     <div class="container">
       <div class="section-tag" style="color: rgba(91,155,213,0.8);">Команда</div>
-      <h2 class="section-title">Наши тренеры</h2>
+      <h2 class="section-title">Наш тренер</h2>
       <p class="section-sub" style="color: rgba(255,255,255,0.5);">Профессионалы с опытом выступлений и тренерской практикой</p>
-      <div class="coaches-grid">
-        <div class="coach-card">
-  <img src="coach.jpg" alt="Юлия Самущенко" style="width:120px; height:120px; border-radius:50%; object-fit:cover; margin-bottom:1rem;">
-  <h3>Юлия Самущенко</h3>
-  <p>Основатель · Главный тренер</p>
-  <p style="font-size:0.8rem; color:rgba(255,255,255,0.5); margin-top:0.5rem;">МС РК · 12 лет в спорте · 7 лет тренерского стажа</p>
-  <p style="font-size:0.8rem; color:rgba(255,255,255,0.5);">Чемпионка Казахстана · НГУ им. Лесгафта</p>
+      <div class="coach-profile">
+  <div class="coach-photo">
+    <img src="coach.jpg" alt="Юлия Самущенко">
+  </div>
+  <div class="coach-info">
+    <h3>Юлия Самущенко</h3>
+    <p class="coach-title">Основатель · Главный тренер</p>
+    <div class="coach-badges">
+      <span class="coach-badge">МС РК</span>
+      <span class="coach-badge">12 лет в спорте</span>
+      <span class="coach-badge">7 лет тренерского стажа</span>
+    </div>
+    <ul class="coach-facts">
+      <li>🏆 Чемпионка Казахстана</li>
+      <li>🥇 Многократный призёр Кубка Казахстана</li>
+      <li>🌍 Призёр международных соревнований</li>
+      <li>🎓 НГУ им. Лесгафта, Санкт-Петербург</li>
+    </ul>
+    <blockquote class="coach-quote">
+      «Фигурное катание — это идеальное сочетание искусства, грации и железной дисциплины. Встать на коньки и побеждать можно в любом возрасте.»
+    </blockquote>
+  </div>
 </div>
       </div>
     </div>
