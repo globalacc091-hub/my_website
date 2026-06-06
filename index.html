@@ -13,6 +13,7 @@
 <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
   <style>
     /* ============================
        ПЕРЕМЕННЫЕ — цвета и шрифты
@@ -500,59 +501,101 @@
        ДЛЯ КОГО
        ============================ */
     .audience-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
 
-    .audience-card {
-      padding: 2.5rem 2rem;
-      border-radius: 24px;
-      border: 1px solid rgba(0,0,0,0.06);
-      transition: transform 0.25s, box-shadow 0.25s;
-      position: relative;
-      overflow: hidden;
-    }
+.audience-card {
+  background: rgba(13,27,42,0.8);
+  border-radius: 24px;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
 
-    .audience-card::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(135deg, rgba(255,255,255,0.6) 0%, transparent 100%);
-      pointer-events: none;
-    }
+.audience-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+}
+.audience-blue:hover {
+  box-shadow: 0 0 20px rgba(74,143,196,0.3), 0 0 60px rgba(74,143,196,0.1);
+}
 
-    .audience-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 50px rgba(0,0,0,0.1);
-    }
+.audience-purple:hover {
+  box-shadow: 0 0 20px rgba(167,139,250,0.3), 0 0 60px rgba(167,139,250,0.1);
+}
 
-    .audience-card:nth-child(1) { background: linear-gradient(135deg, #dff0f7 0%, #c8e6f5 100%); }
-    .audience-card:nth-child(2) { background: linear-gradient(135deg, #ece9f8 0%, #ddd8f5 100%); }
-    .audience-card:nth-child(3) { background: linear-gradient(135deg, #e4f5e9 0%, #d0ecda 100%); }
+.audience-green:hover {
+  box-shadow: 0 0 20px rgba(110,231,160,0.3), 0 0 60px rgba(110,231,160,0.1);
+}
 
-    .audience-icon {
-      font-size: 2.5rem;
-      margin-bottom: 1.2rem;
-      display: block;
-    }
+.audience-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+}
 
-    .audience-card h3 {
-      font-family: var(--font-display);
-      font-size: 1.5rem;
-      margin-bottom: 0.6rem;
-      color: var(--deep);
-    }
+.audience-blue { border: 1px solid rgba(74,143,196,0.25); }
+.audience-blue::before { background: linear-gradient(90deg,#4a8fc4,#7ec8e3); }
+.audience-blue .audience-icon-box { background: rgba(74,143,196,0.15); border-color: rgba(74,143,196,0.3); }
+.audience-blue .audience-icon-box i { color: #7ec8e3; }
+.audience-blue .audience-tags span { background: rgba(74,143,196,0.15); border-color: rgba(74,143,196,0.3); color: #7ec8e3; }
 
-    .audience-card p {
-      font-size: 0.875rem;
-      color: #4a5568;
-      line-height: 1.75;
-    }
+.audience-purple { border: 1px solid rgba(167,139,250,0.25); }
+.audience-purple::before { background: linear-gradient(90deg,#7c3aed,#a78bfa); }
+.audience-purple .audience-icon-box { background: rgba(167,139,250,0.15); border-color: rgba(167,139,250,0.3); }
+.audience-purple .audience-icon-box i { color: #a78bfa; }
+.audience-purple .audience-tags span { background: rgba(167,139,250,0.15); border-color: rgba(167,139,250,0.3); color: #a78bfa; }
+
+.audience-green { border: 1px solid rgba(110,231,160,0.25); }
+.audience-green::before { background: linear-gradient(90deg,#059669,#6ee7a0); }
+.audience-green .audience-icon-box { background: rgba(110,231,160,0.15); border-color: rgba(110,231,160,0.3); }
+.audience-green .audience-icon-box i { color: #6ee7a0; }
+.audience-green .audience-tags span { background: rgba(110,231,160,0.15); border-color: rgba(110,231,160,0.3); color: #6ee7a0; }
+
+.audience-icon-box {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  border: 1px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  font-size: 26px;
+}
+
+.audience-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-bottom: 0.6rem;
+}
+
+.audience-card p {
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.audience-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.audience-tags span {
+  font-size: 0.72rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  border: 1px solid;
+  letter-spacing: 0.05em;
+}
 
     /* ============================
        ТРЕНЕРЫ
@@ -1342,22 +1385,42 @@
       <div class="section-tag">Направления</div>
       <h2 class="section-title">Для кого мы работаем</h2>
       <div class="audience-grid">
-        <div class="audience-card fade-up">
-          <div class="audience-icon">🧒</div>
-          <h3>Дети</h3>
-          <p>Группы с 4 лет. Развиваем координацию, уверенность и любовь к спорту в игровой форме.</p>
-        </div>
-        <div class="audience-card fade-up">
-          <div class="audience-icon">🧑</div>
-          <h3>Взрослые</h3>
-          <p>Никогда не поздно начать. Индивидуальный подход и комфортный темп обучения.</p>
-        </div>
-        <div class="audience-card fade-up">
-          <div class="audience-icon">🏅</div>
-          <h3>Спортсмены</h3>
-          <p>Для тех кто хочет выступать на соревнованиях. Программа подготовки и работа на результат.</p>
-        </div>
-      </div>
+  <div class="audience-card audience-blue fade-up">
+    <div class="audience-icon-box">
+      <i class="ti ti-user" aria-hidden="true"></i>
+    </div>
+    <h3>Дети</h3>
+    <p>Группы с 4 лет. Развиваем координацию, уверенность и любовь к спорту в игровой форме.</p>
+    <div class="audience-tags">
+      <span>от 4 лет</span>
+      <span>группы</span>
+    </div>
+  </div>
+
+  <div class="audience-card audience-purple fade-up">
+    <div class="audience-icon-box">
+      <i class="ti ti-users" aria-hidden="true"></i>
+    </div>
+    <h3>Взрослые</h3>
+    <p>Никогда не поздно начать. Индивидуальный подход и комфортный темп обучения.</p>
+    <div class="audience-tags">
+      <span>любой возраст</span>
+      <span>индивидуально</span>
+    </div>
+  </div>
+
+  <div class="audience-card audience-green fade-up">
+    <div class="audience-icon-box">
+      <i class="ti ti-trophy" aria-hidden="true"></i>
+    </div>
+    <h3>Спортсмены</h3>
+    <p>Программа подготовки к соревнованиям. Работа на результат и призовые места.</p>
+    <div class="audience-tags">
+      <span>соревнования</span>
+      <span>результат</span>
+    </div>
+  </div>
+</div>
     </div>
   </section>
 
