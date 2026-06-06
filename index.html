@@ -932,12 +932,13 @@
   padding: 2rem;
   text-align: center;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   transition: transform 0.2s, box-shadow 0.2s;
   border: 1px solid rgba(74,143,196,0.2);
 }
 
     .price-card::before {
+      display: none;
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0;
