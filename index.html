@@ -679,13 +679,13 @@
 }
 
 .coach-photo img {
-  width: 280px;
-  height: 340px;
+  width: 320px;
+  height: 400px;
   object-fit: cover;
-  border-radius: 20px;
-  border: 2px solid rgba(126,200,227,0.3);
-  filter: brightness(0.95);
-  transition: filter 0.3s, transform 0.3s;
+  object-position: top;
+  border-radius: 24px;
+  border: 2px solid rgba(74,143,196,0.3);
+  box-shadow: 0 0 40px rgba(74,143,196,0.15);
 }
 
 .coach-photo img:hover {
@@ -732,6 +732,12 @@
   margin-bottom: 1.8rem;
 }
 
+.coach-facts li i {
+  font-size: 18px;
+  margin-right: 8px;
+  vertical-align: -3px;
+}
+
 .coach-facts li {
   color: rgba(255,255,255,0.75);
   font-size: 0.92rem;
@@ -741,14 +747,15 @@
 }
 
 .coach-quote {
-  border-left: 2px solid var(--accent);
-  padding-left: 1.2rem;
-  color: rgba(255,255,255,0.45);
+  border-left: 3px solid var(--accent);
+  padding: 1rem 1.5rem;
+  color: rgba(255,255,255,0.6);
   font-style: italic;
-  font-size: 0.92rem;
-  line-height: 1.7;
-  font-family: var(--font-display);
-  font-size: 1.05rem;
+  font-size: 1rem;
+  line-height: 1.8;
+  background: rgba(74,143,196,0.05);
+  border-radius: 0 12px 12px 0;
+  margin-top: 1.5rem;
 }
 
 @media (max-width: 768px) {
@@ -1609,12 +1616,12 @@
       <span class="coach-badge">12 лет в спорте</span>
       <span class="coach-badge">7 лет тренерского стажа</span>
     </div>
-    <ul class="coach-facts">
-      <li>🏆 Чемпионка Казахстана</li>
-      <li>🥇 Многократный призёр Кубка Казахстана</li>
-      <li>🌍 Призёр международных соревнований</li>
-      <li>🎓 НГУ им. Лесгафта, Санкт-Петербург</li>
-    </ul>
+      <ul class="coach-facts">
+        <li><i class="ti ti-trophy" style="color:#f59e0b"></i> Чемпионка Казахстана</li>
+        <li><i class="ti ti-medal" style="color:#4a8fc4"></i> Многократный призёр Кубка Казахстана</li>
+        <li><i class="ti ti-world" style="color:#6ee7a0"></i> Призёр международных соревнований</li>
+       <li><i class="ti ti-school" style="color:#a78bfa"></i> НГУ им. Лесгафта, Санкт-Петербург</li>
+      </ul>
     <blockquote class="coach-quote">
       «Фигурное катание — это идеальное сочетание искусства, грации и железной дисциплины. Встать на коньки и побеждать можно в любом возрасте.»
     </blockquote>
