@@ -1790,5 +1790,15 @@
   cur.style.opacity = '1';
   });
 </script>
+<script>
+  const skater = document.querySelector('.hero-skater');
+  
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    if (skater) {
+      skater.style.transform = `translateY(${scrollY * 0.3}px)`;
+    }
+  });
+</script>
 </body>
 </html>
