@@ -888,11 +888,11 @@
        КОНТАКТЫ
        ============================ */
     .contacts-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
 
     .contact-item {
       display: flex;
@@ -1218,6 +1218,11 @@
   transform: scale(1.1);
   box-shadow: 0 6px 25px rgba(220,39,67,0.5);
 }
+@media (max-width: 768px) {
+  .contacts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
   </style>
 </head>
 <body>
@@ -1248,7 +1253,7 @@
   <section class="hero">
     <canvas id="heroParticles"></canvas>
     <div class="hero-skater">
-      <img src="images/skatelinejpg" alt="Фигуристка" />
+      <img src="images/skateline.jpg" alt="Фигуристка" />
     </div>  
     <div class="hero-content">
       <span class="hero-tag">Школа фигурного катания</span>
@@ -1531,16 +1536,16 @@
             </p>
           </div>
           <div class="contact-item fade-up">
-  <div class="contact-icon">📍</div>
-  <div>
-    <h4>2GIS</h4>
-    <p>
-      <a href="https://2gis.kz/karaganda/geo/70000001110065432" target="_blank" style="color: var(--accent); text-decoration: none;">
-        @silver_skates_krg
-      </a>
-    </p>
-  </div>
-</div>
+          <div class="contact-icon">🗺️</div>
+          <div>
+            <h4>2GIS</h4>
+            <p>
+              <a href="https://2gis.kz/karaganda/geo/70000001110065432" target="_blank" style="color: var(--accent); text-decoration: none;">
+                Открыть карту
+              </a>
+            </p>
+          </div>
+        </div>
         </div>
         <div class="contact-item fade-up">
           <div class="contact-icon">🕐</div>
