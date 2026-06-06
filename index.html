@@ -388,6 +388,37 @@
       padding: 7rem 1.5rem;
     }
 
+    #gallery {
+      padding-bottom: 2rem;
+    }
+
+   #contacts {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  background: var(--deep);
+}
+
+#contacts .section-title {
+  color: #ffffff;
+}
+
+#contacts .section-tag {
+  color: rgba(91,155,213,0.8);
+}
+
+#contacts .contact-item h4 {
+  color: rgba(255,255,255,0.5);
+}
+
+#contacts .contact-item p,
+#contacts .contact-item a {
+  color: rgba(255,255,255,0.85) !important;
+}
+
+#contacts .contact-icon {
+  background: rgba(255,255,255,0.08);
+}
+
     .container {
       max-width: 1100px;
       margin: 0 auto;
@@ -1117,11 +1148,13 @@
        ФУТЕР
        ============================ */
     footer {
-      background: var(--deep);
+     
+      background: #040d16;
       color: rgba(255,255,255,0.4);
       text-align: center;
       padding: 2rem;
       font-size: 0.8rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
     }
 
     /* ============================
@@ -1299,69 +1332,79 @@
 @media (max-width: 768px) {
   #custom-cursor { display: none; }
 }
-.faq-list {
-  margin-top: 2rem;
+
+#loader {
+  position: fixed;
+  inset: 0;
+  background: #071525;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-}
-
-.faq-item {
-  border: 1px solid rgba(74,143,196,0.15);
-  border-radius: 16px;
-  overflow: hidden;
-  background: var(--white);
-}
-
-.faq-q {
-  width: 100%;
-  background: none;
-  border: none;
-  padding: 1.25rem 1.5rem;
-  text-align: left;
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--text);
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
   align-items: center;
-  gap: 1rem;
-  transition: background 0.2s;
+  justify-content: center;
+  gap: 1.5rem;
+  z-index: 99999;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
 }
 
-.faq-q:hover {
-  background: var(--soft);
+#loader.hidden {
+  opacity: 0;
+  visibility: hidden;
 }
 
-.faq-q span {
-  font-size: 1.4rem;
-  color: var(--accent);
-  flex-shrink: 0;
-  transition: transform 0.3s;
+.loader-title {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  color: #fff;
+  letter-spacing: 0.05em;
 }
 
-.faq-item.open .faq-q span {
-  transform: rotate(45deg);
-}
-
-.faq-a {
-  max-height: 0;
+.loader-bar-wrap {
+  width: 160px;
+  height: 2px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 2px;
   overflow: hidden;
-  padding: 0 1.5rem;
-  color: var(--muted);
-  line-height: 1.7;
-  transition: max-height 0.4s ease, padding 0.3s;
 }
 
-.faq-item.open .faq-a {
-  max-height: 300px;
-  padding: 0 1.5rem 1.25rem;
+.loader-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #4a8fc4, #7ec8e3);
+  border-radius: 2px;
+  transition: width 0.05s;
 }
+
+.loader-pct {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+}
+
+.section-divider {
+  display: block;
+  line-height: 0;
+  margin-bottom: -2px;
+}
+
+.section-divider svg {
+  width: 100%;
+  height: 60px;
+}
+
   </style>
 </head>
 <body>
 <div id="custom-cursor"></div>
+
+<div id="loader">
+  <div class="loader-title">Silver Skates</div>
+  <div class="loader-bar-wrap">
+    <div class="loader-bar" id="loaderBar"></div>
+  </div>
+  <div class="loader-pct" id="loaderPct">0%</div>
+</div>
+
   <!-- НАВИГАЦИЯ -->
   <nav>
     <a class="nav-logo" href="#">
@@ -1402,6 +1445,7 @@
   </section>
 
   <!-- О ШКОЛЕ -->
+
   <section class="about" id="about">
     <div class="container">
       <div class="section-tag">О нас</div>
@@ -1413,11 +1457,11 @@
       </p>
       <div class="stats-grid">
         <div class="stat-card fade-up">
-  <div class="stat-num">7+</div>
+  <div class="stat-num" data-count="7" data-suffix="+">7+</div>
   <div class="stat-label">лет работы школы</div>
 </div>
 <div class="stat-card fade-up">
-  <div class="stat-num">12</div>
+  <div class="stat-num" data-count="12">12</div>
   <div class="stat-label">лет тренер в спорте</div>
 </div>
 <div class="stat-card fade-up">
@@ -1431,7 +1475,9 @@
       </div>
     </div>
   </section>
+
 <!-- ИСТОРИЯ -->
+
 <section id="history">
   <div class="container">
     <div class="section-tag">Наш путь</div>
@@ -1549,41 +1595,62 @@
     </div>
   </section>
 
-  <!-- faq -->
+  <!-- РАСПИСАНИЕ -->
   <section id="schedule">
-  <div class="container">
-    <div class="section-tag">Вопросы и ответы</div>
-    <h2 class="section-title">Часто задаваемые вопросы</h2>
-    <div class="faq-list">
-
-      <div class="faq-item">
-        <button class="faq-q">Сколько стоит обучение? <span>+</span></button>
-        <div class="faq-a">В среднем стоимость абонемента составляет от 32 000 до 37 000 тенге. Итоговая сумма рассчитывается индивидуально, так как она напрямую зависит от количества тренировок, которое вы выберете для себя или своего ребенка. Мы всегда подбираем самый комфортный и эффективный график для каждого ученика!</div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q">Сколько длится тренировка? <span>+</span></button>
-        <div class="faq-a">Каждое занятие на льду длится ровно 1 час. Это идеальное время, чтобы успеть качественно размяться, отработать новые элементы и закрепить уже изученные навыки, не перегружая организм.</div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q">За какой период времени я научусь уверенно стоять на коньках? <span>+</span></button>
-        <div class="faq-a">Здесь всё очень индивидуально. Скорость прогресса зависит от вашего стартового уровня, регулярности тренировок и природной координации. Кто-то ловит баланс уже на первых занятиях, а кому-то требуется чуть больше времени. Главное — не сравнивать себя с другими, доверять тренеру и получать удовольствие от процесса!</div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q">Обязательно ли ходить в зал? <span>+</span></button>
-        <div class="faq-a">Да, ОФП и хореография в зале — это обязательная часть обучения. Фигурное катание только кажется легким, но за каждым красивым движением стоит сильное тело. Именно в зале мы нарабатываем мышечный корсет, развиваем гибкость, прыгучесть и координацию. Без базы в зале прогресс на льду будет идти гораздо медленнее.</div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q">Можно ли заниматься в простых коньках? <span>+</span></button>
-        <div class="faq-a">К сожалению, нет. Мы настоятельно рекомендуем сразу приобретать полупрофессиональные коньки. Мягкие прогулочные коньки не держат голеностоп — во время выполнения элементов нога может подвернуться, что создаёт высокий риск травмы. Полупрофессиональные ботинки жестко фиксируют ногу и обеспечивают правильную технику катания.</div>
-      </div>
-
+    <div class="container">
+      <div class="section-tag">Расписание</div>
+      <h2 class="section-title">Когда тренируемся</h2>
+      <table class="schedule-table">
+        <thead>
+          <tr>
+            <th>День</th>
+            <th>Время</th>
+            <th>Группа</th>
+            <th>Тренер</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+  <td>Понедельник</td>
+  <td>20:00 – 21:00</td>
+  <td><span class="badge badge-blue">Средняя и младшие · Лёд</span></td>
+  <td>—</td>
+</tr>
+<tr>
+  <td>Среда</td>
+  <td>20:00 – 21:00</td>
+  <td><span class="badge badge-green">Средняя и старшая · Лёд</span></td>
+  <td>—</td>
+</tr>
+<tr>
+  <td>Пятница</td>
+  <td>20:00 – 21:00</td>
+  <td><span class="badge badge-blue">Средняя и младшие · Лёд</span></td>
+  <td>—</td>
+</tr>
+<tr>
+  <td>Суббота</td>
+  <td>19:00 – 20:00</td>
+  <td><span class="badge badge-purple">Средняя, старшая и группа выходного дня · Лёд</span></td>
+  <td>—</td>
+</tr>
+<tr>
+  <td>Воскресенье</td>
+  <td>11:00 – 12:00</td>
+  <td><span class="badge badge-purple">Группа выходного дня · Лёд</span></td>
+  <td>—</td>
+</tr>
+<tr>
+  <td>Воскресенье</td>
+  <td>12:00 – 13:00</td>
+  <td><span class="badge badge-green">Средняя и младшие · Зал</span></td>
+  <td>—</td>
+</tr>
+        </tbody>
+      </table>
     </div>
-  </div>
-</section>
+  </section>
+
   <!-- ЦЕНЫ -->
   <section class="pricing" id="pricing">
     <div class="container">
@@ -1639,6 +1706,13 @@
   </div>
 </section>
 
+<div class="section-divider">
+  <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#071525"/>
+  </svg>
+</div>
+
+
 <!-- КОНТАКТЫ -->
   <section id="contacts">
     <div class="container">
@@ -1693,6 +1767,9 @@
   </section>
 
   <!-- ФУТЕР -->
+  
+  
+
   <footer>
     <p>© 2026 Школа фигурного катания. Все права защищены.</p>
     <p style="margin-top: 5px; font-size: 0.9em; opacity: 0.8;">Разработано командой artemog & adil  </p>
@@ -1829,12 +1906,76 @@
   });
 </script>
 <script>
-  document.querySelectorAll('.faq-q').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const item = btn.parentElement;
-      item.classList.toggle('open');
-    });
+  const skater = document.querySelector('.hero-skater');
+  
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    if (skater) {
+      skater.style.transform = `translateY(${scrollY * 0.3}px)`;
+    }
   });
 </script>
+
+<script>
+  const loaderBar = document.getElementById('loaderBar');
+  const loaderPct = document.getElementById('loaderPct');
+  const loader = document.getElementById('loader');
+  let w = 0;
+
+  const iv = setInterval(() => {
+    w += Math.random() * 8 + 2;
+    if (w >= 100) {
+      w = 100;
+      clearInterval(iv);
+      setTimeout(() => {
+        loader.classList.add('hidden');
+      }, 300);
+    }
+    loaderBar.style.width = w + '%';
+    loaderPct.textContent = Math.round(w) + '%';
+  }, 80);
+
+  window.addEventListener('load', () => {
+    w = 100;
+    loaderBar.style.width = '100%';
+    loaderPct.textContent = '100%';
+    clearInterval(iv);
+    setTimeout(() => {
+      loader.classList.add('hidden');
+    }, 300);
+  });
+</script>
+
+<script>
+  function animateCounter(el, target, suffix = '') {
+    let start = 0;
+    const duration = 1500;
+    const step = target / (duration / 16);
+    const iv = setInterval(() => {
+      start += step;
+      if (start >= target) {
+        start = target;
+        clearInterval(iv);
+      }
+      el.textContent = Math.round(start) + suffix;
+    }, 16);
+  }
+
+  const counters = document.querySelectorAll('.stat-num[data-count]');
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const target = parseInt(el.dataset.count);
+        const suffix = el.dataset.suffix || '';
+        animateCounter(el, target, suffix);
+        counterObserver.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  counters.forEach(el => counterObserver.observe(el));
+</script>
+
 </body>
 </html>
