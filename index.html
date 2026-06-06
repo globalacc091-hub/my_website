@@ -1012,13 +1012,11 @@
        ============================ */
     .contacts-grid {
   display: flex;
-  flex-wrap: nowrap;
-  gap: 2rem;
+  flex-wrap: wrap;
+  gap: 1.5rem;
   margin-top: 2rem;
   align-items: flex-start;
-  justify-content: space-between;
 }
-
 .contact-item {
   display: flex;
   align-items: flex-start;
@@ -1268,8 +1266,16 @@
   }
 
   .contacts-grid {
-    grid-template-columns: 1fr;
-  }
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.contact-item {
+  white-space: normal;
+  min-width: unset;
+  width: 100%;
+  flex: none;
+}
 
   .audience-grid {
     grid-template-columns: 1fr;
