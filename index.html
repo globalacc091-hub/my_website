@@ -1431,7 +1431,65 @@
   width: 100%;
   height: 60px;
 }
+.faq-list {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
 
+.faq-item {
+  border: 1px solid rgba(74,143,196,0.15);
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--white);
+}
+
+.faq-q {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 1.25rem 1.5rem;
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  transition: background 0.2s;
+}
+
+.faq-q:hover {
+  background: var(--soft);
+}
+
+.faq-q span {
+  font-size: 1.4rem;
+  color: var(--accent);
+  flex-shrink: 0;
+  transition: transform 0.3s;
+}
+
+.faq-item.open .faq-q span {
+  transform: rotate(45deg);
+}
+
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 1.5rem;
+  color: var(--muted);
+  line-height: 1.7;
+  transition: max-height 0.4s ease, padding 0.3s;
+}
+
+.faq-item.open .faq-a {
+  max-height: 300px;
+  padding: 0 1.5rem 1.25rem;
+}
   </style>
 </head>
 <body>
@@ -1635,61 +1693,41 @@
     </div>
   </section>
 
-  <!-- РАСПИСАНИЕ -->
-  <section id="schedule">
-    <div class="container">
-      <div class="section-tag">Расписание</div>
-      <h2 class="section-title">Когда тренируемся</h2>
-      <table class="schedule-table">
-        <thead>
-          <tr>
-            <th>День</th>
-            <th>Время</th>
-            <th>Группа</th>
-            <th>Тренер</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-  <td>Понедельник</td>
-  <td>20:00 – 21:00</td>
-  <td><span class="badge badge-blue">Средняя и младшие · Лёд</span></td>
-  <td>—</td>
-</tr>
-<tr>
-  <td>Среда</td>
-  <td>20:00 – 21:00</td>
-  <td><span class="badge badge-green">Средняя и старшая · Лёд</span></td>
-  <td>—</td>
-</tr>
-<tr>
-  <td>Пятница</td>
-  <td>20:00 – 21:00</td>
-  <td><span class="badge badge-blue">Средняя и младшие · Лёд</span></td>
-  <td>—</td>
-</tr>
-<tr>
-  <td>Суббота</td>
-  <td>19:00 – 20:00</td>
-  <td><span class="badge badge-purple">Средняя, старшая и группа выходного дня · Лёд</span></td>
-  <td>—</td>
-</tr>
-<tr>
-  <td>Воскресенье</td>
-  <td>11:00 – 12:00</td>
-  <td><span class="badge badge-purple">Группа выходного дня · Лёд</span></td>
-  <td>—</td>
-</tr>
-<tr>
-  <td>Воскресенье</td>
-  <td>12:00 – 13:00</td>
-  <td><span class="badge badge-green">Средняя и младшие · Зал</span></td>
-  <td>—</td>
-</tr>
-        </tbody>
-      </table>
+ <!-- FAQ -->
+<section id="schedule">
+  <div class="container">
+    <div class="section-tag">Вопросы и ответы</div>
+    <h2 class="section-title">Часто задаваемые вопросы</h2>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-q">Сколько стоит обучение? <span>+</span></button>
+        <div class="faq-a">В среднем стоимость абонемента составляет от 32 000 до 37 000 тенге. Итоговая сумма рассчитывается индивидуально, так как она напрямую зависит от количества тренировок. Мы всегда подбираем самый комфортный и эффективный график для каждого ученика!</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">Сколько длится тренировка? <span>+</span></button>
+        <div class="faq-a">Каждое занятие на льду длится ровно 1 час. Это идеальное время, чтобы успеть качественно размяться, отработать новые элементы и закрепить уже изученные навыки, не перегружая организм.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">За какой период времени я научусь уверенно стоять на коньках? <span>+</span></button>
+        <div class="faq-a">Здесь всё очень индивидуально. Скорость прогресса зависит от вашего стартового уровня, регулярности тренировок и природной координации. Главное — не сравнивать себя с другими, доверять тренеру и получать удовольствие от процесса!</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">Обязательно ли ходить в зал? <span>+</span></button>
+        <div class="faq-a">Да, ОФП и хореография в зале — это обязательная часть обучения. Фигурное катание только кажется легким, но за каждым красивым движением стоит сильное тело. Без базы в зале прогресс на льду будет идти гораздо медленнее.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">Можно ли заниматься в простых коньках? <span>+</span></button>
+        <div class="faq-a">К сожалению, нет. Мягкие прогулочные коньки не держат голеностоп — во время выполнения элементов нога может подвернуться, что создаёт высокий риск травмы. Полупрофессиональные ботинки жестко фиксируют ногу и обеспечивают правильную технику катания.</div>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- ЦЕНЫ -->
   <section class="pricing" id="pricing">
@@ -2015,6 +2053,12 @@
 
   counters.forEach(el => counterObserver.observe(el));
 </script>
-
+<script>
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.parentElement.classList.toggle('open');
+    });
+  });
+</script>
 </body>
 </html>
