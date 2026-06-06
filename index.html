@@ -999,17 +999,21 @@
        КОНТАКТЫ
        ============================ */
     .contacts-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 1.5rem;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 2rem;
   margin-top: 2rem;
+  align-items: flex-start;
+  justify-content: space-between;
 }
 
-    .contact-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 1rem;
-    }
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  min-width: 160px;
+  white-space: nowrap;
+}
 
     .contact-icon {
       width: 44px;
