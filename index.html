@@ -679,13 +679,13 @@
 }
 
 .coach-photo img {
-  width: 280px;
-  height: 340px;
+  width: 320px;
+  height: 400px;
   object-fit: cover;
-  border-radius: 20px;
-  border: 2px solid rgba(126,200,227,0.3);
-  filter: brightness(0.95);
-  transition: filter 0.3s, transform 0.3s;
+  object-position: top;
+  border-radius: 24px;
+  border: 2px solid rgba(74,143,196,0.3);
+  box-shadow: 0 0 40px rgba(74,143,196,0.15);
 }
 
 .coach-photo img:hover {
@@ -732,6 +732,12 @@
   margin-bottom: 1.8rem;
 }
 
+.coach-facts li i {
+  font-size: 18px;
+  margin-right: 8px;
+  vertical-align: -3px;
+}
+
 .coach-facts li {
   color: rgba(255,255,255,0.75);
   font-size: 0.92rem;
@@ -741,14 +747,15 @@
 }
 
 .coach-quote {
-  border-left: 2px solid var(--accent);
-  padding-left: 1.2rem;
-  color: rgba(255,255,255,0.45);
+  border-left: 3px solid var(--accent);
+  padding: 1rem 1.5rem;
+  color: rgba(255,255,255,0.6);
   font-style: italic;
-  font-size: 0.92rem;
-  line-height: 1.7;
-  font-family: var(--font-display);
-  font-size: 1.05rem;
+  font-size: 1rem;
+  line-height: 1.8;
+  background: rgba(74,143,196,0.05);
+  border-radius: 0 12px 12px 0;
+  margin-top: 1.5rem;
 }
 
 @media (max-width: 768px) {
@@ -893,9 +900,24 @@
     /* ============================
        ЦЕНЫ
        ============================ */
-    .pricing {
-      background: var(--soft);
+     .pricing {
+  background: var(--deep);
     }
+
+    .pricing .section-title {
+  color: #ffffff;
+}
+
+.pricing .section-tag {
+  color: rgba(91,155,213,0.8);
+}
+
+.pricing-note {
+  color: rgba(255,255,255,0.4);
+  font-size: 0.85rem;
+  margin-top: 1.5rem;
+  text-align: center;
+}
 
     .pricing-grid {
       display: grid;
@@ -905,52 +927,66 @@
     }
 
     .price-card {
-      background: var(--white);
-      border: 1px solid rgba(74,143,196,0.1);
-      border-radius: 24px;
-      padding: 2.2rem;
-      text-align: center;
-      transition: transform 0.25s, box-shadow 0.25s;
-    }
+  background: rgba(13,27,42,0.8);
+  border-radius: 24px;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 1px solid rgba(74,143,196,0.2);
+}
+
+    .price-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #4a8fc4, #7ec8e3);
+}
 
     .price-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 16px 40px rgba(74,143,196,0.12);
-    }
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 0 20px rgba(74,143,196,0.3), 0 0 60px rgba(74,143,196,0.1);
+}
 
     .price-card.featured {
-      border: 2px solid var(--accent);
-      background: linear-gradient(135deg, #f0f8ff 0%, #e8f4fc 100%);
-      position: relative;
-    }
+  border: 2px solid rgba(74,143,196,0.5);
+  background: rgba(13,27,42,0.95);
+}
 
     .price-card.featured::before {
-      content: 'Популярное';
-      position: absolute;
-      top: -14px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
-      color: white;
-      font-size: 0.68rem;
-      letter-spacing: 0.08em;
-      padding: 0.25rem 0.9rem;
-      border-radius: 50px;
-      white-space: nowrap;
-    }
+  content: 'Популярное';
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--accent);
+  color: white;
+  font-size: 0.7rem;
+  padding: 0.2rem 0.8rem;
+  border-radius: 50px;
+  white-space: nowrap;
+  height: auto;
+}
 
-    .price-name {
-      font-size: 0.83rem;
-      color: var(--muted);
-      margin-bottom: 1rem;
-    }
+   .price-name {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 0.75rem;
+}
+
+.price-per {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.4);
+  margin-top: 0.25rem;
+}
 
     .price-val {
-      font-family: var(--font-display);
-      font-size: 2.8rem;
-      font-weight: 600;
-      color: var(--deep);
-      line-height: 1;
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #ffffff;
     }
 
     .price-per {
@@ -963,17 +999,21 @@
        КОНТАКТЫ
        ============================ */
     .contacts-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 1.5rem;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 2rem;
   margin-top: 2rem;
+  align-items: flex-start;
+  justify-content: space-between;
 }
 
-    .contact-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 1rem;
-    }
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  min-width: 160px;
+  white-space: nowrap;
+}
 
     .contact-icon {
       width: 44px;
@@ -1580,12 +1620,12 @@
       <span class="coach-badge">12 лет в спорте</span>
       <span class="coach-badge">7 лет тренерского стажа</span>
     </div>
-    <ul class="coach-facts">
-      <li>🏆 Чемпионка Казахстана</li>
-      <li>🥇 Многократный призёр Кубка Казахстана</li>
-      <li>🌍 Призёр международных соревнований</li>
-      <li>🎓 НГУ им. Лесгафта, Санкт-Петербург</li>
-    </ul>
+      <ul class="coach-facts">
+        <li><i class="ti ti-trophy" style="color:#f59e0b"></i> Чемпионка Казахстана</li>
+        <li><i class="ti ti-medal" style="color:#4a8fc4"></i> Многократный призёр Кубка Казахстана</li>
+        <li><i class="ti ti-world" style="color:#6ee7a0"></i> Призёр международных соревнований</li>
+       <li><i class="ti ti-school" style="color:#a78bfa"></i> НГУ им. Лесгафта, Санкт-Петербург</li>
+      </ul>
     <blockquote class="coach-quote">
       «Фигурное катание — это идеальное сочетание искусства, грации и железной дисциплины. Встать на коньки и побеждать можно в любом возрасте.»
     </blockquote>
@@ -1672,10 +1712,9 @@
   <div class="price-val">от 25 000<span style="font-size:1.2rem">₸</span></div>
   <div class="price-per">зависит от кол-ва занятий</div>
 </div>
-      <p style="color: var(--muted); font-size: 0.85rem; margin-top: 1.5rem;">
-  * Например: 4 занятия в месяц — 25 000₸, 5 занятий — 31 000₸.<br>
-  Оплата без перерасчётов и переносов при пропусках, включая пропуски по болезни.
-      </p>
+      <p class="pricing-note">* Например: 4 занятия в месяц — 25 000₸, 5 занятий — 31 000₸.<br>
+        Оплата без перерасчётов и переносов при пропусках, включая пропуски по болезни.
+    </p>
       </div>
     </div>
   </section>
