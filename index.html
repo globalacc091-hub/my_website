@@ -392,9 +392,32 @@
       padding-bottom: 2rem;
     }
 
-    #contacts {
-      padding-top: 2rem;
-    }
+   #contacts {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  background: var(--deep);
+}
+
+#contacts .section-title {
+  color: #ffffff;
+}
+
+#contacts .section-tag {
+  color: rgba(91,155,213,0.8);
+}
+
+#contacts .contact-item h4 {
+  color: rgba(255,255,255,0.5);
+}
+
+#contacts .contact-item p,
+#contacts .contact-item a {
+  color: rgba(255,255,255,0.85) !important;
+}
+
+#contacts .contact-icon {
+  background: rgba(255,255,255,0.08);
+}
 
     .container {
       max-width: 1100px;
@@ -1125,11 +1148,13 @@
        ФУТЕР
        ============================ */
     footer {
-      background: var(--deep);
+     
+      background: #040d16;
       color: rgba(255,255,255,0.4);
       text-align: center;
       padding: 2rem;
       font-size: 0.8rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
     }
 
     /* ============================
@@ -1354,6 +1379,17 @@
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: rgba(255,255,255,0.3);
+}
+
+.section-divider {
+  display: block;
+  line-height: 0;
+  margin-bottom: -2px;
+}
+
+.section-divider svg {
+  width: 100%;
+  height: 60px;
 }
 
   </style>
@@ -1670,6 +1706,13 @@
   </div>
 </section>
 
+<div class="section-divider">
+  <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#071525"/>
+  </svg>
+</div>
+
+
 <!-- КОНТАКТЫ -->
   <section id="contacts">
     <div class="container">
@@ -1724,6 +1767,9 @@
   </section>
 
   <!-- ФУТЕР -->
+  
+  
+
   <footer>
     <p>© 2026 Школа фигурного катания. Все права защищены.</p>
     <p style="margin-top: 5px; font-size: 0.9em; opacity: 0.8;">Разработано командой artemog & adil  </p>
